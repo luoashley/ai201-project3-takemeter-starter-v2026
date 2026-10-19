@@ -53,6 +53,9 @@ whether you hit them:
 
 ## 1.
 
+Overall accuracy on the held-out test set is at least 0.70 for every evaluation seed.
+
+**Why this target:** A three-label majority guess is roughly one third; 0.70 means the classifier is useful for triage rather than random sorting.
 <!-- Your criterion. It must name a number. -->
 
 
@@ -65,6 +68,9 @@ whether you hit them:
 
 ## 2.
 
+Macro F1 on the held-out test set is at least 0.65 for every seed.
+
+**Why this target:** Macro F1 prevents the largest label from hiding weak performance on reactions, which are shorter and easier to confuse.
 <!-- Your criterion. -->
 
 
@@ -77,6 +83,9 @@ whether you hit them:
 
 ## 3.
 
+Each label has an F1 score of at least 0.55 on every seed's held-out set.
+
+**Why this target:** The labels are intended to be usable individually; 0.55 allows variance from the smaller reaction class while ruling out a label being ignored.
 <!-- Your criterion. -->
 
 
@@ -89,6 +98,9 @@ whether you hit them:
 
 ## 4.
 
+The test-set label distribution has no class below 15% or above 55% of examples.
+
+**Why this target:** A reasonably balanced test set makes the per-label comparison meaningful and prevents a majority-class shortcut.
 <!-- Your criterion. -->
 
 
@@ -101,6 +113,9 @@ whether you hit them:
 
 ## 5.
 
+For predictions with confidence at least 0.80, accuracy is at least 0.80 on the held-out set.
+
+**Why this target:** A user should be able to treat high-confidence classifications as a reliable queue for review, while lower-confidence posts can be escalated.
 <!-- Your criterion. -->
 
 
